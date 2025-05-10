@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mapas | Blog Nueva York</title>
+<link href="cssny.css" rel="stylesheet"> 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+	
+	
+<body>
+	
+	
+	<header>
+	
+		<div class="encabezado-container">
+		<a href="index.html"> <img class="encabezado" src="fotos sitio web/encabezado.png" alt="foto encabezado" ></a>
+	</div>
+		
+		<a href="javascript:void(0);" class="icono" onclick="MiFuncion()"> <i class="fa fa-bars"></i> </a>
+		
+	<nav class="menu" id="navegador">
+			<ul>
+				<li> <a href="galeria.html"> Galería </a> </li>
+				
+				<li> <a href="recomendaciones.html"> Recomendaciones </a> </li>
+
+				
+				<li> <a href="mapas.html"> Mapas</a> </li>
+			</ul>
+	
+		</nav>
+	</header>
+	
+	<main>
+  <h1 class="titulos"> MAPAS PARA GUARDAR </h1>
+		
+		
+		<p class="textohome"> A continuación te dejo los links de mis listas de Google Maps, para que te los puedas guardar.</p>
+		
+		<h2 class="textomapa"> Lugares para comer</h2>
+		
+		<div class="mapa"> <a href="https://maps.app.goo.gl/JjVkbrHySxXRqocZ7" target="_blank"> <img src="fotos sitio web/mapacomida.png" alt="mapa comida"> </a> </div>
+		
+		<h2 class="textomapa"> Shopping </h2>
+		
+		<div class="mapa"> <a href="https://maps.app.goo.gl/8LTTXeRPhAfe3Tvd7" target="_blank"> <img src="fotos sitio web/mapashopping.png" alt="mapa shopping"> </a> </div>
+		
+		  <h2 class="textomapa"> Puntos icónicos </h2>
+		
+		<div class="mapa"> <a href="https://maps.app.goo.gl/yCvi3EdjxnYrqKJB6" target="_blank"> <img src="fotos sitio web/mapapuntos.png" alt="mapa puntos"> </a> </div>
+		
+		<h2 class="textomapa"> Miradores </h2>
+		
+		<div class="mapa"> <a href="https://maps.app.goo.gl/PoEQPi4jY87NkEHZ9" target="_blank"> <img src="fotos sitio web/mapamiradores.png" alt="mapa miradores"> </a> </div>
+
+		  </main>
+	
+	
+	<footer>
+		<div class="form-footer">
+    <h3 class="footer">Contacto</h3>
+    <form id="formularioContacto">
+      <input type="text" id="nombre" placeholder="Tu nombre" required>
+      <input type="email" id="email" placeholder="Tu email" required>
+      <textarea id="mensaje" placeholder="Tu mensaje (opcional)"></textarea>
+      <button type="submit">Enviar</button>
+      <p id="mensajeError" class="error"></p>
+    </form>
+		</div>
+	<p  class="footer">© 2025 Blog Nueva York - Todos los derechos reservados</p>
+</footer>
+	
+	
+	<script>
+function MiFuncion() {
+  var x = document.getElementById("navegador");
+  if (x.className === "menu") {
+    x.className += " responsive";
+  } else {
+    x.className = "menu";
+  }
+}
+		
+		
+		
+		const formulario = document.getElementById('formularioContacto');
+  const mensajeError = document.getElementById('mensajeError');
+
+  formulario.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const nombre = document.getElementById('nombre').value.trim();
+    const email = document.getElementById('email').value.trim();
+
+    // Expresión regular básica para validar email
+    const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (nombre === '' || email === '') {
+      mensajeError.textContent = 'Por favor, completá nombre y email.';
+    } else if (!emailValido.test(email)) {
+      mensajeError.textContent = 'Por favor, ingresá un email válido.';
+    } else {
+      mensajeError.textContent = '';
+      alert('Formulario enviado correctamente');
+      formulario.reset();
+    }
+  });
+</script>
+</body>
+</html>
