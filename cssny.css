@@ -1,0 +1,526 @@
+@charset "UTF-8";
+/* CSS Document */
+
+*{margin:0; padding:0}
+.encabezado{width: 100%; display: block; margin: 0;}
+ul{display: flex}
+nav a{text-decoration: none;}
+body {background-color: #1C1C1C; padding-bottom: 100px; color: #FFFFFF;}
+.menu {
+    display: flex;
+    justify-content:space-evenly;
+    align-items:center;
+    background-color: #1c1c1c; 
+    padding: 0 0;
+    width: 100%;
+	font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+	
+}
+
+.menu ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+	 width: 100%; 
+    justify-content: space-evenly;
+	gap: 0;
+}
+.menu ul li {
+flex: 1;
+	text-align: center;
+  padding: 0;
+  border-left: 1px solid white; 
+	
+}
+
+.menu ul li:first-child {
+  border-left: none; 
+}
+
+.menu ul li a {
+   display: block;
+  padding: 15px 20px;
+	color: white; 
+    text-decoration: none;
+	
+}
+
+.menu ul li a:hover {
+  background-color: white;
+  color: #333;
+	transform: scale(1.05);
+  transition: all 0.4s ease;
+}
+
+h1 {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+text-align: center;
+	padding-top: 50px;
+}
+
+.blog{
+	font-size: 50px;
+	color: #FF3B3F;
+}
+
+h1.titulos{
+text-align: left;
+  padding-left: 50px;
+	font-size: 40px;
+	color: #FFD60A;
+}
+
+h1.titulosh{
+text-align: left;
+  padding-left: 50px;
+	padding-top: 0px;
+	color: black;
+	font-size: 40px;
+}
+
+.titulosh a {
+  text-decoration: none;
+	color: #FFD60A;
+}
+
+.fotohome{
+ display: block;
+  margin: 0 auto;
+  width: 30%;
+  height: auto;
+	 border-radius: 10px;
+	  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+.textohome{
+font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+	margin: 30px;
+    margin-left: 50px;
+}
+
+.cajacontenedora {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.caja3 {
+    width: 31%;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.caja3 img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+.caja3 img:hover {opacity:.5; transition: all 0.8s}
+
+h2{
+font-family: "Poppins", sans-serif;	
+	font-weight: 500;
+  font-style: normal;
+	margin-bottom: 10px;
+}
+
+.negrita{
+	font-weight: 500;
+	text-decoration: underline !important;
+	text-underline-offset: 5px;
+}
+
+.imagen-con-texto {
+  position: relative;  
+  width: 100%;
+}
+
+.imagen-con-texto img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.texto-encima {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 24px;
+  background-color: rgba(0, 0, 0, 0.7); 
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.cajacontenedora2{
+	display: flex;
+	flex-flow: wrap;
+	margin-bottom: 30px;
+}
+
+.reco{
+	width:23%; margin:1%;
+	background-color: white;
+	 border-radius: 10px;
+}
+
+.reco img{
+	width: 150px;
+	 height: 150px;
+	  object-fit: cover;
+	 border-radius: 50%;
+	display: block;
+  margin: 0 auto;
+}
+
+.reco:hover {opacity:.7; transition: all 0.3s}
+
+.reco h3{
+	font-family: "Poppins", sans-serif;
+	font-weight: 500;
+  font-style: normal;
+	text-align: center;
+	margin: 10px;
+	font-size: 25px;
+	color: black;
+}
+
+.reco p{
+	font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+	margin: 15px;
+	text-align: center;
+	color: black;
+	margin-top: 25px;
+}
+
+.reco a{
+	text-decoration: none;
+}
+
+
+/*aca*/
+
+.slider-contenedor {
+  position: relative;
+  width: 30%;
+  margin: 40px auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.8s ease-in-out;
+  width: 100%; /* 100% por cada slide */
+}
+
+.slide {
+  width: 100%;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.foto-con-texto {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.foto-con-texto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+}
+
+.texto-superpuesto {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 30px;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.boton-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); 
+  background-color: rgba(0,0,0,0.7);
+  border: none;
+	border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  z-index: 2;
+  color: #fff;
+}
+
+.anterior {
+  left: 10px;
+}
+
+.siguiente {
+  right: 10px;
+}
+
+.indicadores {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 2;
+}
+
+.punto-indicador {
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.punto-indicador.activo {
+  background-color: white;
+}
+
+.galeria-slider {
+  position: relative;
+  width: 80%;
+  max-width: 800px;
+  margin: 50px auto;
+}
+
+.galeria-ventana {
+  overflow: hidden;
+  width: 100%;
+}
+
+.galeria-pista {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.galeria-item {
+  min-width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.galeria-item img {
+  width: 100%;
+  padding-top: 20px;
+}
+
+.galeria-texto {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  margin: 15px;
+  text-align: center;
+}
+
+.control-prev,
+.control-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #1C1C1C;
+	color: white;
+  border: none;
+  font-size: 50px;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.control-prev {
+  left: -120px;
+}
+
+.control-next {
+  right: -120px;
+}
+
+.footer{
+	text-align:center; font-family:'Poppins', sans-serif; padding:20px;
+}
+footer {
+
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.form-footer {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.form-footer input,
+.form-footer textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+}
+
+.form-footer button {
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.form-footer button:hover {
+  background-color: #ddd;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.mapa{
+	 display: flex;
+  padding: 50px;
+	padding-top: 20px;
+}
+
+.mapa img{
+	width: 50%;
+}
+
+.textomapa{
+	padding-left: 50px;
+}
+.estiloreco {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.estiloreco h3{
+	font-family: "Poppins", sans-serif;
+	font-weight: 500;
+  font-style: normal;
+	padding-left: 50px;
+	margin: 10px;
+	margin-left: 0px;
+	font-size: 25px;
+}
+
+.estiloreco img{
+	width: 50%;
+	margin: 50px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.estiloreco p{
+	margin-left: 50px;
+	margin-bottom: 50px;
+	font-family: Raleway, sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+
+/*JUSTIFICAR TODOO!!*/
+
+/*computadoras*/
+@media(min-width:1024px){
+	.icono {display: none;} /*que no se vea el icono de menu en computadoras*/
+}
+
+
+/*tabletas*/
+@media(max-width: 1024px){
+	.reco{width:38%; padding-bottom: 30px; padding-top: 10px;} /*dos cajas por fila, dejando espacio a los laterales*/
+	.cajacontenedora2{justify-content: center; align-items: center; margin-top: 15px;} /*para que quede en el medio, para que no quede tan pegado al título*/
+	.reco p {padding-left: 15px;padding-right: 15px;} /*que el texto no quede tan pegado al borde*/
+	.fotohome {width: 50%;} /*para q la foto se vea más grande*/
+	.textohome {font-size: 18px;} /*agrandar la letra*/
+	.blog {font-size: 70px;}/*agrandar la letra*/
+	.menu {font-size: 20px; justify-content: center;}/*agrandar la letra, Centrar*/
+	.icono {display: none;} /*que no se vea el icono de menu*/
+	.menu ul {justify-content: center; align-items: center;} /*Centra la lista del menú en ambos ejes.*/
+	.menu ul li {align-self: stretch; display: flex; justify-content: center; align-items: center;} /*Hace que cada li ocupe toda la altura disponible del contenedor ul, visualmente que la linea blanca ocupe todo el ancho, li en contenedor flex, Centra horizontalmente y verticalmente el contenido del li */
+	.caja3 {width: 55%; margin: 0 auto 20px auto;} /*para que me quede una foto por fila, igualmente dsp voy a cambiarlo para que la galeria en la página principal sea slider */
+	.control-prev {left: -70px;} /*mueve las flechas de lugar*/
+.control-next {right: -70px;}/*mueve las flechas de lugar*/
+	.slider-wrapper{width: 100%; overflow: hidden;}/*que no se muestre la barra desplazadora, el contenedor ocupa el 100% del ancho y oculta contenido extra*/
+	.slider-contenedor{width: 70%;} /*agrande la imagen*/
+	.estiloreco {display: block;} /*para que no esten en dos columnas*/
+	.estiloreco p {margin-right: 20%;}/*para qagregar margen a la derecha y q no se pierda el texto*/
+}
+
+
+
+/*celulares*/
+@media(max-width: 480px){
+	.encabezado-container {width: 100%; overflow: hidden;} /*que no se muestre la barra desplazadora, el contenedor ocupa el 100% del ancho y oculta contenido extra*/
+	img.encabezado {width: 180%; display: block; margin-left: -55%;} /* agranda la imagen y muestra la parte que yo quiero, compensando con un margin left negativo */
+	.icono {display: block; font-size: 30px; cursor: pointer; margin: 10px; color: white; position: absolute; top: 10px; right: 10px;} /* icono visible a la derecha, arriba de todo, de color blanco */
+	.menu {display: none;} /*que no se vea el menú configurado para computadoras*/
+	.menu.responsive {display: flex; width: 100%; flex-direction: column; align-items: stretch; position: static;} /*cuando se toca el icono del menú, se muestra el menú en forma de columna y en posición estática para que empuje el contenido hacia abajo.*/
+	.menu.responsive ul {display: flex; flex-direction: column; align-items: center; padding: 0; margin: 0; width: 100%; gap: 0; }  /* que las opciones del menú se vean en columna, ocupando todo el ancho, sin márgenes ni padding adicionales */
+	.menu.responsive ul li {width: 100%; border-bottom: 1px solid white; display: flex; justify-content: center; align-items: center; border-left: none;} /* cada elelemento ocupa el 100% del ancho, centra el texto verticalmente y horizontalmente, añade una línea blanca debajo de cada elemento, quita el borde izquierdo*/
+	.menu.responsive ul li:last-child {border-bottom: none;} /*para que no se muestre la última linea*/
+	.menu.responsive ul li a {display: block; width: 100%; padding: 15px 0;} /*Los enlaces ocupan todo el ancho, con suficiente padding para facilitar la interacción táctil.*/
+	h1{padding-top: 30px;} /*menos padding top*/
+	.textohome {margin: 30px;} /*menos espacio de margen*/
+	.fotohome {width: 90%;} /*más grande la imagen*/
+	.blog {font-size: 50px;} /*más chiquito el texto*/
+	.caja3 {width: 85%;} /*uno por fila*/
+	.reco{width: 80%; margin: 0 auto 20px auto;}/*uno por fila, mismo margen que las fotos de galería*/
+	.control-prev {left: -50px;} /*mueve las flechas de lugar*/
+.control-next {right: -50px;}/*mueve las flechas de lugar*/
+	.slider-wrapper{width: 100%; overflow: hidden;}/*que no se muestre la barra desplazadora, el contenedor ocupa el 100% del ancho y oculta contenido extra*/
+	.slider-contenedor{width: 80%;} /*agrande la imagen*/
+	footer{margin: 5%;} /*para agregarle margen*/
+	.estiloreco img {width: 60%;} /*agrandar las imágenes*/
+	.estiloreco p {margin-right: 30px;} /*margen a la derecha del texto*/
+	.mapa {width: 150%;}
+	.estiloreco {display: block;} /*para que no esten en dos columnas*/
+}
+
+
