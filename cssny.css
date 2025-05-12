@@ -18,6 +18,7 @@ body {background-color: #1C1C1C; padding-bottom: 100px; color: #FFFFFF;}
   font-style: normal;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 	
+	
 }
 
 .menu ul {
@@ -37,8 +38,8 @@ flex: 1;
 	
 }
 
-.menu ul li:first-child {
-  border-left: none; 
+.menu ul li:nth-child(2) {
+  border-left: none;
 }
 
 .menu ul li a {
@@ -469,6 +470,7 @@ html {
 /*computadoras*/
 @media(min-width:1024px){
 	.icono {display: none;} /*que no se vea el icono de menu en computadoras*/
+	.home {display: none} /*que no se vea la opcion de home en el menu en computadoras y en tabletas*/
 }
 
 
@@ -491,6 +493,7 @@ html {
 	.slider-contenedor{width: 70%;} /*agrande la imagen*/
 	.estiloreco {display: block;} /*para que no esten en dos columnas*/
 	.estiloreco p {margin-right: 20%;}/*para qagregar margen a la derecha y q no se pierda el texto*/
+	.home {display: none}/*que no se vea la opcion de home en el menu en computadoras y en tabletas*/
 }
 
 
@@ -519,8 +522,9 @@ html {
 	footer{margin: 5%;} /*para agregarle margen*/
 	.estiloreco img {width: 60%;} /*agrandar las imágenes*/
 	.estiloreco p {margin-right: 30px;} /*margen a la derecha del texto*/
-	.mapa {width: 150%;}
+	.mapa {width: 150%;} /*agrandar la imagen*/
 	.estiloreco {display: block;} /*para que no esten en dos columnas*/
+	.contenedormapa{overflow: hidden} /*que no se mueste la barra desplazadora*/
 }
 
 
