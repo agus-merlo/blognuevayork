@@ -93,7 +93,7 @@ text-align: left;
 h1.titulosh{
 text-align: left;
   padding-left: 50px;
-	padding-top: 0px;
+	padding-top: 30px;
 	color: black;
 	font-size: 40px;
 }
@@ -184,6 +184,7 @@ font-family: "Poppins", sans-serif;
 	display: flex;
 	flex-flow: wrap;
 	margin-bottom: 30px;
+	margin: 40px auto;
 }
 
 .reco{
@@ -475,8 +476,6 @@ html {
   scroll-behavior: smooth;
 }
 
-
-
 /*JUSTIFICAR TODOO!!*/
 
 /*computadoras*/
@@ -506,6 +505,10 @@ html {
 	.estiloreco {display: block;} /*para que no esten en dos columnas*/
 	.estiloreco p {margin-right: 20%;}/*para qagregar margen a la derecha y q no se pierda el texto*/
 	.home {display: none}/*que no se vea la opcion de home en el menu en computadoras y en tabletas*/
+	.menu ul li:first-child {
+    border-left: none;
+    display: none;
+}
 }
 
 
