@@ -57,6 +57,12 @@ flex: 1;
   transition: all 0.4s ease;
 }
 
+.menu ul li a.activo {
+  background-color: white;
+  color: #333;
+}
+
+
 h1 {
   font-family: "Oswald", sans-serif;
   font-optical-sizing: auto;
@@ -65,6 +71,8 @@ h1 {
 text-align: center;
 	padding-top: 50px;
 }
+
+
 
 .blog{
 	font-size: 50px;
@@ -462,7 +470,6 @@ footer {
 html {
   scroll-behavior: smooth;
 }
-
 
 
 
