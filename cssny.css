@@ -42,6 +42,10 @@ flex: 1;
   border-left: none;
 }
 
+.menu ul li:first-child {
+  border-left: none;
+}
+
 .menu ul li a {
    display: block;
   padding: 15px 20px;
