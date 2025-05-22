@@ -470,10 +470,18 @@ footer {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+ margin-right: 90px;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+.publicidad{
+	display: block;
+	margin: auto;
+	width: 728px;
+	height: 90px;
 }
 
 /*JUSTIFICAR TODOO!!*/
@@ -540,6 +548,7 @@ html {
 	.mapa {width: 150%;} /*agrandar la imagen*/
 	.estiloreco {display: block;} /*para que no esten en dos columnas*/
 	.contenedormapa{overflow: hidden} /*que no se mueste la barra desplazadora*/
+	.publicidad{width: 300px; height: 600px;} /*tamaño del anuncio*/
 }
 
 
