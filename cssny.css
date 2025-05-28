@@ -6,6 +6,11 @@
 ul{display: flex}
 nav a{text-decoration: none;}
 body {background-color: #1C1C1C; padding-bottom: 50px; color: #FFFFFF;}
+
+.logo{
+	display: block; width: 10%; cursor: pointer; margin: 10px; position: absolute; top: 10px; left: 10px;
+}
+
 .menu {
     display: flex;
     justify-content:space-evenly;
@@ -526,6 +531,7 @@ html {
 	.encabezado-container {width: 100%; overflow: hidden;} /*que no se muestre la barra desplazadora, el contenedor ocupa el 100% del ancho y oculta contenido extra*/
 	img.encabezado {width: 180%; display: block; margin-left: -55%;} /* agranda la imagen y muestra la parte que yo quiero, compensando con un margin left negativo */
 	.icono {display: block; font-size: 30px; cursor: pointer; margin: 10px; color: white; position: absolute; top: 10px; right: 10px;} /* icono visible a la derecha, arriba de todo, de color blanco */
+	.logo{width:20%} /*agrandar tamaño*/
 	.menu {display: none;} /*que no se vea el menú configurado para computadoras*/
 	.menu.responsive {display: flex; width: 100%; flex-direction: column; align-items: stretch; position: static;} /*cuando se toca el icono del menú, se muestra el menú en forma de columna y en posición estática para que empuje el contenido hacia abajo.*/
 	.menu.responsive ul {display: flex; flex-direction: column; align-items: center; padding: 0; margin: 0; width: 100%; gap: 0; }  /* que las opciones del menú se vean en columna, ocupando todo el ancho, sin márgenes ni padding adicionales */
