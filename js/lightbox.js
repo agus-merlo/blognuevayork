@@ -221,8 +221,7 @@
       self.album.push({
         alt: $link.attr('data-alt'),
         link: $link.attr('href'),
-        title: $link.attr('data-title') || $link.attr('title'),
-    subtitle: $link.attr('data-subtitle') || ''
+        title: $link.attr('data-title') || $link.attr('title')
       });
     }
 
@@ -283,14 +282,7 @@
     // Show loading state
     this.$overlay.fadeIn(this.options.fadeDuration);
     $('.lb-loader').fadeIn('slow');
-  
-	  var $caption = this.$lightbox.find('.lb-caption');
-var captionText = image.title || '';
-var subtitleText = this.album[this.currentImageIndex].subtitle || '';
-
-// Usamos HTML para permitir salto de línea y subtítulo en <small>
-$caption.html(captionText + (subtitleText ? '<br><small>' + subtitleText + '</small>' : ''))
-        .fadeIn(this.options.fadeDuration);
+    this.$lightbox.find('.lb-image, .lb-nav, .lb-prev, .lb-next, .lb-dataContainer, .lb-numbers, .lb-caption').hide();
     this.$outerContainer.addClass('animating');
 
     // When image to show is preloaded, we send the width and height to sizeContainer()
