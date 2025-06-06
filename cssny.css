@@ -435,17 +435,43 @@ footer {
 
 .mapa{
 	 display: flex;
+	flex-flow: wrap;
   padding: 50px;
 	padding-top: 20px;
 }
 
 .mapa img{
-	width: 50%;
+	width: 80%;
+}
+
+.mapa a{
+	width: 40%;
+	display: block;
 }
 
 .textomapa{
 	padding-left: 50px;
 }
+.galeria-petit {
+width: 60%;	
+	display: flex;
+	flex-flow: wrap;
+
+	justify-content: space-around;
+    align-content: center;
+}
+
+.galeria-petit img{
+width: 100%;
+
+}
+
+.galeria-petit a{
+width: 30%;	
+	padding-bottom: 10px;
+}
+
+
 .estiloreco {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
