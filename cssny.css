@@ -103,6 +103,8 @@ text-align: left;
 	font-size: 40px;
 }
 
+
+
 .titulosh a {
   text-decoration: none;
 	color: #FFD60A;
@@ -117,13 +119,26 @@ text-align: left;
 	  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
 }
 
+.frasehome{
+	
+  font-family: "Covered By Your Grace", cursive;
+  font-weight: 200;
+  font-style: normal;
+	font-size: 70px;
+		margin: 70px;
+    margin-left: 150px;
+	margin-right: 150px;
+}
+
 .textohome{
 font-family: "Raleway", sans-serif;
   font-optical-sizing: auto;
+	font-size: 20px;
   font-weight: 400;
   font-style: normal;
 	margin: 30px;
     margin-left: 50px;
+	line-height: 30px;
 }
 
 .cajacontenedora {
