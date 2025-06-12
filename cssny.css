@@ -582,7 +582,7 @@ html {
 
 /*tabletas*/
 @media(max-width: 1024px){
-	.reco{width:38%; padding-bottom: 30px; padding-top: 10px;} /*dos cajas por fila, dejando espacio a los laterales*/
+	.reco{width:38%;} /*dos cajas por fila, dejando espacio a los laterales*/
 	.cajacontenedora2{justify-content: center; align-items: center; margin-top: 15px;} /*para que quede en el medio, para que no quede tan pegado al título*/
 	.reco p {padding-left: 15px;padding-right: 15px;} /*que el texto no quede tan pegado al borde*/
 	.fotohome {width: 50%;} /*para q la foto se vea más grande*/
@@ -602,8 +602,8 @@ html {
 	.home {display: none}/*que no se vea la opcion de home en el menu en computadoras y en tabletas*/
 	.menu ul li:first-child {
     border-left: none;
-    display: none;
-}
+    display: none;}
+	.contenedor-recos{justify-content: center; align-content: center;}
 }
 
 
@@ -650,6 +650,7 @@ html {
     width: 45%; /* dos por fila */
     padding-bottom: 10px;
   }
+	
 }
 
 
