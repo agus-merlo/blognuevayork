@@ -200,56 +200,92 @@ font-family: "Poppins", sans-serif;
   text-align: center;
 }
 
-.cajacontenedora2{
-	display: flex;
-	flex-flow: wrap;
-	margin-bottom: 30px;
-	margin: 40px auto;
+
+.contenedor-recos{display: flex; flex-wrap: wrap; justify-content: space-between; margin-bottom: 30px;
+	margin: 40px auto;} 
+.reco {
+  width: 23%;
+  margin: 1%;
+  height: 300px;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, filter 0.3s;
+	 
+  display: flex;
+  flex-direction: column;
+  min-height: 340px; /* o el valor que te quede cómodo */
+  background-color: black;
 }
 
-.reco{
-	width:23%; margin:1%;
-	background-color: white;
-	 border-radius: 10px;
-	padding-bottom: 10px;
+.reco:hover {
+  transform: scale(1.02);
+  filter: brightness(1.3);
 }
 
-.reco img{
-	width: 150px;
-	 height: 150px;
-	  object-fit: cover;
-	 border-radius: 50%;
-	display: block;
-  margin: 0 auto;
+.reco .overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.2));
+  height: 100%;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: 10px;
 }
 
-.reco:hover {opacity:.7; transition: all 0.3s}
-
-.reco h3{
-	font-family: "Poppins", sans-serif;
-	font-weight: 500;
-  font-style: normal;
-	text-align: center;
-	margin: 10px;
-	font-size: 25px;
-	color: black;
+.reco h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  margin-bottom: 10px;
 }
 
-.reco p{
-	font-family: "Raleway", sans-serif;
-  font-optical-sizing: auto;
+.reco p {
+  font-family: "Raleway", sans-serif;
   font-weight: 400;
-  font-style: normal;
-	margin: 15px;
-	text-align: center;
-	color: black;
-	margin-top: 25px;
+  font-size: 14px;
 }
 
-.reco a{
-	text-decoration: none;
+.reco a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+a.reco {
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 
+.reco-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.overlay {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.2));
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.overlay a{
+	position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2;
+}
 
 /*aca*/
 
@@ -404,8 +440,14 @@ font-family: "Poppins", sans-serif;
 }
 
 .footer{
+	text-align:center; font-family:'Poppins', sans-serif; padding:20px; text-decoration: none; color: darkgray; display: block;
+}
+
+.footerc{
 	text-align:center; font-family:'Poppins', sans-serif; padding:20px;
 }
+
+
 footer {
 
   color: white;
@@ -471,7 +513,6 @@ footer {
 width: 60%;	
 	display: flex;
 	flex-flow: wrap;
-
 	justify-content: space-around;
     align-content: center;
 }
@@ -546,7 +587,7 @@ html {
 	.reco p {padding-left: 15px;padding-right: 15px;} /*que el texto no quede tan pegado al borde*/
 	.fotohome {width: 50%;} /*para q la foto se vea más grande*/
 	.textohome {font-size: 18px;} /*agrandar la letra*/
-	.blog {font-size: 70px;}/*agrandar la letra*/
+	
 	.menu {font-size: 20px; justify-content: center;}/*agrandar la letra, Centrar*/
 	.icono {display: none;} /*que no se vea el icono de menu*/
 	.menu ul {justify-content: center; align-items: center;} /*Centra la lista del menú en ambos ejes.*/
@@ -584,7 +625,7 @@ html {
 	.fotohome {width: 90%;} /*más grande la imagen*/
 	.blog {font-size: 50px;} /*más chiquito el texto*/
 	.caja3 {width: 85%;} /*uno por fila*/
-	.reco{width: 80%; margin: 0 auto 20px auto;}/*uno por fila, mismo margen que las fotos de galería*/
+	.reco{width: 80%; margin: 0 auto 20px auto;padding: 0px;}/*uno por fila, mismo margen que las fotos de galería*/
 	.control-prev {left: -50px;} /*mueve las flechas de lugar*/
 .control-next {right: -50px;}/*mueve las flechas de lugar*/
 	.slider-wrapper{width: 100%; overflow: hidden;}/*que no se muestre la barra desplazadora, el contenedor ocupa el 100% del ancho y oculta contenido extra*/
@@ -592,10 +633,23 @@ html {
 	footer{margin: 5%;} /*para agregarle margen*/
 	.estiloreco img {width: 60%;} /*agrandar las imágenes*/
 	.estiloreco p {margin-right: 30px;} /*margen a la derecha del texto*/
-	.mapa {width: 150%;} /*agrandar la imagen*/
+	.mapa { flex-direction: column;display: flex;align-items: center;
+   } /*agrandar la imagen*/
+	.mapa a{width: auto;}
 	.estiloreco {display: block;} /*para que no esten en dos columnas*/
 	.contenedormapa{overflow: hidden} /*que no se mueste la barra desplazadora*/
 	.publicidad{width: 300px; height: 600px;} /*tamaño del anuncio*/
+	.frasehome{font-size: 50px; margin: 70px;}
+	.reco p { padding-left: 0px;}
+	.galeria-petit{justify-content: space-between;
+    margin-top: 20px; width: 90%;}
+	.galeria-petit img {
+    width: 100%;
+  }
+	.galeria-petit a {
+    width: 45%; /* dos por fila */
+    padding-bottom: 10px;
+  }
 }
 
 
