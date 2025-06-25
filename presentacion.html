@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Presentación Blog NYC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Gochi+Hand&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+  
+	
+<style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 17px;
+    font-weight: 400;
+    font-style: normal;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .slide.active {
+      opacity: 1;
+    }
+
+    /* Slide con fondo de imagen y texto superpuesto */
+    .slide.first {
+      background: url("https://agus-merlo.github.io/blognuevayork/6933152d-e3ee-42df-b275-abcd73e42fad.JPG") no-repeat center center/cover;
+      color: white;
+      position: relative;
+    }
+
+    .slide.first::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6); /* para oscurecer un poco la imagen y que resalte el texto */
+      z-index: 1;
+    }
+
+    .first .text-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .first h1 {
+      color: #FF2E2E;
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+
+    .first p {
+      color: #FFD700;
+      font-size: 2rem;
+    }
+
+    /* Estilo general de los demás slides */
+    h1 {
+      font-size: 3rem;
+      
+      margin-bottom: 1rem;
+	
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+text-align: center;
+	
+	color: #FF3B3F;
+}
+
+
+    p {
+      font-size: 1.3rem;
+      color: #fff;
+      line-height: 1.6;
+      max-width: 800px;
+    }
+
+    .amarillo {
+      color: #FFD700;
+      font-weight: bold;
+      font-size: 1.8rem;
+		font-family: "Oswald", sans-serif;font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    }
+
+    .nav-buttons {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transform: translateY(-50%);
+  padding: 0 20px;
+  z-index: 99;
+}
+
+.nav-buttons button {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  font-size: 2rem;
+  color: #FFD700;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.nav-buttons button:hover {
+  background-color: #FF2E2E;
+  color: #000;
+}
+
+    a {
+      color: #FFD700;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+	 .titulosh{
+	font-size: 40px;
+		  text-decoration: none;
+	color: #FFD60A;
+		  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+	 .logo{width: 30%;position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 150px;
+  z-index: 100;}
+	  
+	  .hourly {
+      text-align: center;
+      color: #FFD700;
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+    }
+
+    .section {
+      background-color: #1c1c1c;
+      border-left: 6px solid #FF2E2E;
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 10px;
+    }
+
+    .section h2 {
+      color: #FFD700;
+      margin-bottom: 10px;
+    }
+
+    .item {
+      margin-left: 20px;
+      margin-bottom: 10px;
+    }
+
+    .item span {
+      color: #aaa;
+    }
+
+    .total {
+      font-size: 1.5rem;
+      text-align: center;
+      margin-top: 30px;
+      font-weight: bold;
+      color: #FFD700;
+		padding-bottom: 30px;
+    }
+
+    .hosting {
+      background-color: #222;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .hosting p {
+      margin: 8px 0;
+    }
+	  .custom-slide {
+  background-image: url('../sobras produccion/Inusuales/DSC03859.JPG');
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.custom-slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6); /* oscurece */
+  z-index: 1;
+}
+
+.custom-slide .text-content {
+  position: relative;
+  z-index: 2; /* arriba del filtro */
+  padding: 20px;
+}
+	.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.gallery img {
+  width: 200px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #FFD700;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Flechas */
+.modal-nav {
+  position: absolute;
+  top: 50%;
+  font-size: 60px;
+  color: #FFD700;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transform: translateY(-50%);
+  user-select: none;
+}
+
+.modal-nav:hover {
+  color: #FF2E2E;
+}
+
+.modal-nav.prev {
+  left: 30px;
+}
+
+.modal-nav.next {
+  right: 30px;
+}
+	
+	.mapa-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  color: #FFD700;
+  font-family: 'Oswald', sans-serif;
+  width: 100%;
+  height: 100%;
+  margin-top: 40px;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.mapa-home {
+  font-size: 3rem;
+  margin-bottom: 40px;
+}
+
+.mapa-grid {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 80px;
+  flex-wrap: wrap;
+}
+
+.mapa-titulo {
+  font-weight: bold;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.mapa-lista {
+  list-style: none;
+  padding: 0;
+  font-size: 1.8rem;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+		
+	.amarillo{font-size: 1.2rem;}
+
+  .gallery.imad img{
+    width: 150px;
+  }
+.gallery.imac img{
+    width: 80px;
+  }
+  .modal-content {
+    max-width: 95%;
+    max-height: 70%;
+  }
+
+  .modal-nav {
+    font-size: 40px;
+  }
+
+  .custom-slide .text-content {
+    padding: 10px;
+  }
+
+  .logo {
+    width: 80px;
+    top: 10px;
+    left: 10px;
+  }
+
+  .hourly, .section, .total {
+    font-size: 1rem;
+  }
+		
+.nav-buttons {
+    top: 90%;}
+		.mapa-home {
+    font-size: 2.4rem;
+  }
+
+  .mapa-container {
+    font-size: 1.6rem;
+    padding: 0 20px;
+  }
+
+  .mapa-grid {
+    gap: 40px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mapa-titulo {
+    font-size: 1.8rem;
+  }
+
+  .mapa-lista {
+    font-size: 1.6rem;
+  }
+		/* Ajustes para presupuesto en mobile */
+.hourly {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.section {
+  padding: 15px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+}
+
+.section h2 {
+  font-size: 1.1rem;
+}
+
+.item {
+  margin-left: 10px;
+  font-size: 0.9rem;
+}
+
+.item span {
+  font-size: 0.8rem;
+  color: #bbb;
+}
+
+.total {
+  font-size: 1.1rem;
+  padding-bottom: 20px;
+}
+		.custom-slide {
+    overflow-y: auto;
+    align-items: flex-start;
+  }
+		.otro .otro1 {
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+	.custom-slide.gracias{align-items: center}
+}
+	    .custom-slide.mapa {
+        overflow-y: inherit;
+        align-items: center;
+    }
+
+  </style>
+</head>
+	
+	
+	
+<body>
+
+<img class="logo" src="https://agus-merlo.github.io/blognuevayork/fotos%20sitio%20web/logo.png" alt="logo">
+	
+	
+ <div class="container">
+	 
+	 
+ <!-- Slide con imagen + texto superpuesto -->
+<div class="slide first active">
+<div class="text-content">  
+<h1>BLOG NUEVA YORK</h1>
+<p class="titulosh">María Agustina Merlo</p>
+</div>
+</div>
+	 
+	 
+
+<div class="slide custom-slide">
+<div class="text-content">
+<h1>Objetivo, público y temática</h1>
+<p><strong class="amarillo">Objetivo del sitio:</strong><br>
+  Recomendar e inspirar a personas que se vayan de viaje a Nueva York.
+<br> Y si no tienen un viaje planeado, que puedan sentir que recorren la ciudad por un rato.</p>
+
+<p><strong class="amarillo">Público objetivo:</strong><br>
+  Personas jóvenes, viajeras, curiosas, con interés por la fotografía, la cultura urbana y especialmente la ciudad de Nueva York.</p>
+
+<p><strong class="amarillo">Temática:</strong><br>
+  La ciudad de Nueva York.</p>
+</div>
+</div>
+
+
+	 
+<div class="slide custom-slide" style="background-image: url('../sobras produccion/calles/DSC03936.JPG')">
+<div class="text-content">
+ <h1>Diseño y experiencia</h1>
+
+  <p>
+    El diseño busca reflejar el espíritu <strong>urbano y dinámico</strong> de Nueva York. 
+  </p>
+
+  <p>
+    <br>Elegí una estética <strong>moderna, minimalista y visualmente clara</strong>, con predominio del negro para resaltar las imágenes y generar contraste con detalles en rojo y amarillo.
+  </p>
+</div>
+</div>
+	
+	 
+	  
+<div class="slide custom-slide mapa" style="background-image: url('../sobras produccion/calles/DSC04190.JPG')">
+  <div class="text-content">
+    <h1>Mapa de sitio</h1>
+
+    <div class="mapa-container">
+      <h2 class="mapa-home">HOME</h2>
+
+      <div class="mapa-grid">
+        <div>
+          <div class="mapa-titulo">Galería</div>
+          <ul class="mapa-lista">
+            <li>Calles</li>
+            <li>Emblemas</li>
+            <li>Arte</li>
+          </ul>
+        </div>
+
+        <div class="mapa-titulo">Recomendaciones</div>
+        <div class="mapa-titulo">Mapas</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+	 <div class="slide custom-slide" style="background-image: url('../sobras produccion/arte/DSC03875.JPG')">
+  <div class="text-content">
+    <h1>Wireframes – Desktop</h1>
+
+    <div class="gallery imad">
+      <img src="Wireframe compu/1.png" alt="Wireframe 1" onclick="openModal(0)" >
+      <img src="Wireframe compu/2.png" alt="Wireframe 2" onclick="openModal(1)" >
+      <img src="Wireframe compu/3.png" alt="Wireframe 3" onclick="openModal(2)" >
+      <img src="Wireframe compu/4.png" alt="Wireframe 4" onclick="openModal(3)" >
+      <img src="Wireframe compu/5.png" alt="Wireframe 5" onclick="openModal(4)" >
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="modal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="modal-img">
+  <button class="modal-nav prev" onclick="prevImage()">&#10094;</button>
+  <button class="modal-nav next" onclick="nextImage()">&#10095;</button>
+</div>
+
+	<div class="slide custom-slide" style="background-image: url('../sobras produccion/arte/DSC03875.JPG')">
+  <div class="text-content">
+    <h1>Wireframes – Celulares</h1>
+
+    <div class="gallery imac">
+      <img src="Wire/1.png" alt="Wireframe 1" onclick="openModal(5)">
+      <img src="Wire/2.png" alt="Wireframe 2" onclick="openModal(6)" >
+      <img src="Wire/3.png" alt="Wireframe 3" onclick="openModal(7)" >
+      <img src="Wire/4.png" alt="Wireframe 4" onclick="openModal(8)" >
+      <img src="Wire/5.png" alt="Wireframe 5" onclick="openModal(9)" >
+    </div>
+  </div>
+</div>
+ 
+
+	 
+<div class="slide custom-slide otro" style="background-image: url('../sobras produccion/calles/DSC04425.JPG')">
+ <div class="text-content otro1">  
+<h1 class="empuja">Presupuesto Blog Nueva York</h1>
+  <div class="hourly">💸 Tarifa por hora: $13 USD</div>
+
+  <div class="section">
+    <h2>1. Diseño de Información – $117</h2>
+    <div class="item">🔍 Investigación y planificación – $26 <span>(2 horas)</span></div>
+    <div class="item">🗺️ Mapeo del sitio y wireframes – $26 <span>(2 horas)</span></div>
+    <div class="item">✍️ Redacción de contenido – $65 <span>(5 horas)</span></div>
+  </div>
+
+  <div class="section">
+    <h2>2. Diseño Visual (UI/UX) – $390</h2>
+    <div class="item">🎨 Identidad visual (logo, paleta, tipografía) – $130 <span>(10 horas)</span></div>
+    <div class="item">🧪 Prototipado – $195 <span>(15 horas)</span></div>
+    <div class="item">📱 Diseño responsivo – $65 <span>(5 horas)</span></div>
+  </div>
+	 
+	 <div class="section">
+    <h2>3. Desarrollo Web – $416</h2>
+    <div class="item">💻 Maquetación HTML/CSS – $260 <span>(20 horas)</span></div>
+    <div class="item">⚙️ Integración JavaScript – $91 <span>(7 horas)</span></div>
+    <div class="item">🚀 Optimización (SEO, accesibilidad, velocidad) – $65 <span>(5 horas)</span></div>
+  </div>
+</div> </div>
+	 
+	 
+	 
+<div class="slide custom-slide" style="background-image: url('../sobras produccion/calles/DSC04425.JPG')">
+ <div class="text-content">   
+  <div class="total">🧾 Total del proyecto: $923 USD</div>
+  <div class="section hosting">
+    <h2>4. Hosting y Publicación Online</h2>
+    <p>🌐 Dominio: <strong>nuevayorkblog.com</strong> – $17.6 USD/año × 5 años</p>
+    <p>📡 Hosting: $3499 ARS / mes</p>
+  </div>
+</div> </div>
+	 
+	 
+	 
+	 <div class="slide custom-slide gracias" style="background-image: url('../sobras produccion/people watching/DSC04220.JPG')">
+ <div class="text-content">
+<h1>Gracias por mirar 🗽</h1>
+      <p><a href="https://agus-merlo.github.io/blognuevayork/index.html" target="_blank">Blog completo online</a></p>
+</div>
+</div>	
+	 
+	 	 
+	 
+   <div class="nav-buttons">
+  <button onclick="prevSlide()">&#8592;</button> <!-- Flecha izquierda -->
+  <button onclick="nextSlide()">&#8594;</button> <!-- Flecha derecha -->
+</div>
+
+  </div>
+
+  <script>
+   
+	   const slides = document.querySelectorAll('.slide');
+  let current = 0;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove('active');
+      if (i === index) {
+        slide.classList.add('active');
+      }
+    });
+  }
+
+  function nextSlide() {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  }
+
+  function prevSlide() {
+    current = (current - 1 + slides.length) % slides.length;
+    showSlide(current);
+  }
+
+
+ 
+	  const modal = document.getElementById("modal");
+const modalImg = document.getElementById("modal-img");
+
+const imageSources = [
+  "Wireframe compu/1.png",
+  "Wireframe compu/2.png",
+  "Wireframe compu/3.png",
+  "Wireframe compu/4.png",
+  "Wireframe compu/5.png",
+ "Wire/1.png",
+	 "Wire/2.png",
+	 "Wire/3.png",
+	 "Wire/4.png",
+	 "Wire/5.png",
+];
+
+let currentIndex = 0;
+
+function openModal(index) {
+  currentIndex = index;
+  modal.style.display = "block";
+  modalImg.src = imageSources[currentIndex];
+}
+
+function closeModal() {
+  modal.style.display = "none";
+}
+
+function nextImage() {
+  currentIndex = (currentIndex + 1) % imageSources.length;
+  modalImg.src = imageSources[currentIndex];
+}
+
+function prevImage() {
+  currentIndex = (currentIndex - 1 + imageSources.length) % imageSources.length;
+  modalImg.src = imageSources[currentIndex];
+}
+
+	  // Teclado: manejar tanto slides como imágenes, sin que se mezclen
+document.addEventListener("keydown", function(event) {
+  const isModalOpen = modal.style.display === "block";
+
+  if (isModalOpen) {
+    if (event.key === "ArrowRight") {
+      nextImage();
+    } else if (event.key === "ArrowLeft") {
+      prevImage();
+    } else if (event.key === "Escape") {
+      closeModal();
+    }
+  } else {
+    if (event.key === "ArrowRight") {
+      nextSlide();
+    } else if (event.key === "ArrowLeft") {
+      prevSlide();
+    }
+  }
+});
+
+
+  </script>
+</body>
+</html>
+
